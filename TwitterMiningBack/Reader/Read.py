@@ -2,7 +2,7 @@ import urllib.parse
 import urllib.request
 import re
 
-class Reader():
+class Read():
     userAgent = ''
     url = ''
     subject = ''
@@ -13,7 +13,7 @@ class Reader():
         self.url = 'https://twitter.com/search?q=replace%20lang%3Aen%20-filter%3Alinks%20-filter%3Areplies&src=typed_query&f=live&vertical=default'
 
     # Reads the data from the target site and return it's information
-    def read(self,subject):
+    def execute(self,subject):
         self.subject = subject
         inputData = self.getSiteInput()
         return self.getInputData(inputData)
