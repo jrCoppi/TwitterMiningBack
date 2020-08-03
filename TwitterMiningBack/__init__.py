@@ -1,4 +1,1 @@
-print("Aplication Started!");
-
-#Import reading module
-import Reader;
+#Package inicializer if necessary, remove if remains empty
