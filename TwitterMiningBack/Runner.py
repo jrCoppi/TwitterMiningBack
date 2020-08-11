@@ -8,5 +8,5 @@ read = Read()
 filtering = Filtering()
 
 #Executes the reading
-inputData = read.execute("nvidia")
+inputData = read.execute("hearthstone")
 inputData = filtering.execute(inputData)

@@ -1,15 +1,32 @@
+import re
+
 class Filtering():
+    htmlPatern = ''
 
     def __init__(self):
-        print('aaa')
+        self.htmlPatern = re.compile('<(.+?)>')
 
-    def execute(self,data):
-        #Get the containers with tweets, TO-DO Foreach than removehtml and simbols
-        startPos = data.find('<tr class="tweet-container">')
-        endPos = (data[startPos:startPos+10000]).find('</tr>')
+    def execute(self,newData):
+        #Loop while there is data
+        while True:
+            #Finds the first ocourence and replaces the data
+            dataPos = newData.find('<tr class="tweet-container">')
 
-        data = data[startPos:startPos+endPos+5]
+            if dataPos == -1:
+                break;
+            
+            #finds the positions
+            newData = newData[dataPos:len(newData)] 
+            endPos = newData.find('</tr>') + 5
 
-        print(data)
-        print(startPos)
-        print(endPos)
+            #Cleans the data
+            cleanData = self.cleanData(newData[0:endPos])
+
+            #Removes the current data from the string
+            newData = newData[endPos:len(newData)]
+    
+    def cleanData(self,data):
+        #removes html
+        cleanData = re.sub(self.htmlPatern, '', data)
+        print(cleanData)
+        return cleanData
