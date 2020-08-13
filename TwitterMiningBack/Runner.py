@@ -10,3 +10,4 @@ filtering = Filtering()
 #Executes the reading
 inputData = read.execute("hearthstone")
 inputData = filtering.execute(inputData)
+print(inputData)
