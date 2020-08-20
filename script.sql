@@ -4,7 +4,7 @@ use TwitterMining;
 
 CREATE TABLE `termo` (
    `id_termo` int(11) unsigned NOT NULL AUTO_INCREMENT,
-   `ds_termo` varchar(255) DEFAULT NULL,
+   `ds_termo` MEDIUMTEXT DEFAULT NULL,
    PRIMARY KEY (`id_termo`)
  ) ENGINE=InnoDB;
  
