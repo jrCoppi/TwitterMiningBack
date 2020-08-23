@@ -4,7 +4,7 @@ from Reader.Read import Read
 from Filter.Filtering import Filtering
 from Data.Operation import Operation
 
-term = 'hamilton'
+term = 'microsoft'
 
 #Initialize all the class
 operation = Operation()
@@ -15,4 +15,5 @@ filtering = Filtering()
 inputData = read.execute(term)
 inputData = filtering.execute(inputData)
 
+#Saves the result
 operation.saveSearch(inputData,term)

@@ -44,7 +44,7 @@ class Operation():
     
     def createPost(self,post):
         ## defining the Query
-        query = "INSERT INTO post (ds_post) VALUES (%s)"
+        query = "INSERT IGNORE INTO post (ds_post) VALUES (%s)"
 
         values = (post,)
         return self.base.insertData(query,values)
@@ -52,7 +52,7 @@ class Operation():
     
     def createSearchPost(self,postId,searchId):
         ## defining the Query
-        query = "INSERT INTO pesquisa_post (id_post, id_pesquisa) VALUES (%s, %s)"
+        query = "INSERT IGNORE INTO pesquisa_post (id_post, id_pesquisa) VALUES (%s, %s)"
 
         ## storing values in a variable
         values = (postId, searchId)
