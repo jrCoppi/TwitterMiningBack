@@ -4,16 +4,23 @@ from Reader.Read import Read
 from Filter.Filtering import Filtering
 from Data.Operation import Operation
 
-term = 'microsoft'
-
 #Initialize all the class
 operation = Operation()
 read = Read()
 filtering = Filtering()
 
-#Executes the reading
-inputData = read.execute(term)
-inputData = filtering.execute(inputData)
+def search(term):
 
-#Saves the result
-operation.saveSearch(inputData,term)
+    #Executes the reading
+    inputData = read.execute(term)
+    inputData = filtering.execute(inputData)
+
+    #Saves the result
+    searchId = operation.saveSearch(inputData,term)
+
+    # Data to serve with our API
+    listSearch = {
+        "searchId": searchId
+    }
+    
+    return listSearch

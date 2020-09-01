@@ -1,0 +1,34 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /search:
+    get:
+      operationId: "Runner.search"
+      tags:
+        - "Search"
+      summary: "Does a search by the given term"
+      description: "Does a search by the given term"
+      parameters:
+        - name: term
+          in: query
+          type: string
+          description: Term for search
+          required: true
+      responses:
+        200:
+          description: "The code of the search"
+          schema:
+            properties:
+              searchId:
+                type: string
