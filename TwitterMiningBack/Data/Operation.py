@@ -15,6 +15,8 @@ class Operation():
         for post in data:
             postId = self.createPost(post)
             postId = self.createSearchPost(postId,searchId)
+        
+        return searchId
             
 
     def createTerm(self,term):
