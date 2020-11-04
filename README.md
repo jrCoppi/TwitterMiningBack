@@ -26,6 +26,3 @@
  - Reader: Does the request and returns only the valid content 
  - Filter: Loop through the data, filtering to get only text and structure it.
  - Runner: Main file, called by the API, manages the operations betwen packages.
-
-# Possible changes
- If you want, you can change the Runner.py script to return all the data instead of the ID.

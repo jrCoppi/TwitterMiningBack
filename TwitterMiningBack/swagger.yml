@@ -32,3 +32,51 @@ paths:
             properties:
               searchId:
                 type: string
+  /results:
+    get:
+      operationId: "Runner.getResults"
+      tags:
+        - "results"
+      summary: "Gets the results from a given Id"
+      description: "Gets the results from a given Id"
+      parameters:
+        - name: searchId
+          in: query
+          type: string
+          description: Id of the search
+          required: true
+      responses:
+        200:
+          description: "The Search Results"
+          schema:
+            properties:
+              postList:
+                type: array
+  /mostSearched:
+    get:
+      operationId: "Runner.getMostSearched"
+      tags:
+        - "mostSearched"
+      summary: "Gets the most searched terms"
+      description: "Gets the most searched terms"
+      responses:
+        200:
+          description: "The list"
+          schema:
+            properties:
+              termList:
+                type: array
+  /latestSearchs:
+    get:
+      operationId: "Runner.getLatestSearchs"
+      tags:
+        - "latestSearchs"
+      summary: "Gets the lastest searchs"
+      description: "Gets the lastest searchs"
+      responses:
+        200:
+          description: "The list"
+          schema:
+            properties:
+              termList:
+                type: array
