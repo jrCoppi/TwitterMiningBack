@@ -24,3 +24,33 @@ def search(term):
     }
     
     return listSearch
+
+def getResults(searchId):
+    results = operation.getResults(searchId)
+
+     # Data to serve with our API
+    listSearch = {
+        "postList": results
+    }
+    
+    return listSearch
+
+def getMostSearched():
+    results = operation.getMostSearched()
+
+     # Data to serve with our API
+    listSearch = {
+        "termList": results
+    }
+    
+    return listSearch
+
+def getLatestSearchs():
+    results = operation.getLatestSearchs()
+
+     # Data to serve with our API
+    listSearch = {
+        "termList": results
+    }
+    
+    return listSearch

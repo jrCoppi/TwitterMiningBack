@@ -59,3 +59,18 @@ class Operation():
         ## storing values in a variable
         values = (postId, searchId)
         return self.base.insertData(query,values)
+
+    def getResults(self,searchId):
+        query = "SELECT po.ds_post FROM pesquisa p INNER JOIN pesquisa_post pp ON ( pp.id_pesquisa = p.id_pesquisa) INNER JOIN post po ON ( pp.id_post = po.id_post) where p.id_pesquisa = '" + searchId + "'"
+        result = self.base.selectData(query)
+        return result
+    
+    def getMostSearched(self):
+        query = "SELECT t.ds_termo, COUNT(t.id_termo) as nr_ocorrencia FROM termo t INNER JOIN pesquisa p ON ( p.id_termo = t.id_termo ) GROUP BY t.id_termo desc  ORDER BY nr_ocorrencia desc LIMIT 10"
+        result = self.base.selectData(query)
+        return result
+    
+    def getLatestSearchs(self):
+        query = "SELECT p.id_pesquisa, t.ds_termo FROM pesquisa p inner join termo t ON (t.id_termo = p.id_termo) order by p.dt_pesquisa desc limit 10"
+        result = self.base.selectData(query)
+        return result
