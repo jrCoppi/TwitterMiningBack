@@ -5,13 +5,15 @@
  The main idea is to study and use python in a regular application, with a project structure made for a back end API for mining data from Twitter
 
 # Requires
-- Python
+- Python 3.9
 - MYQSL
 
 # Packages
 - mysql-connector-python
 - mysqlclient
 - flask
+- flask_restx
+- flask_cors
 - connexion
 
 # How to Install

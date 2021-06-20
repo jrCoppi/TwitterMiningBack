@@ -9,7 +9,7 @@ class Read():
     
     #Validate, change user data for pc and also twitter for get the "last ones"
     def __init__(self):
-        self.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
+        self.userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
         self.url = 'https://twitter.com/search?q=replace%20lang%3Aen%20-filter%3Alinks%20-filter%3Areplies&src=typed_query&f=live&vertical=default'
 
     # Reads the data from the target site and return it's information
@@ -35,5 +35,4 @@ class Read():
         endPos = inputData.find('body>')
 
         inputData = inputData[startPos:endPos-5]
-
         return inputData
