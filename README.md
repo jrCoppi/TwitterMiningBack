@@ -28,3 +28,11 @@
  - Reader: Does the request and returns only the valid content 
  - Filter: Loop through the data, filtering to get only text and structure it.
  - Runner: Main file, called by the API, manages the operations betwen packages.
+
+
+
+- Gravar log de cada requisição
+- Gravar uma segunda tabela com os dados todos que retorna
+- Commitar isso numa branch como instalra etc
+
+- Outra branch separada só pra testar, criar api para salvar respostas num arquivo e salvar na base, e outra pra pegar esse dado
