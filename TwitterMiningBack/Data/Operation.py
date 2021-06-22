@@ -78,13 +78,16 @@ class Operation():
         result = self.base.selectData(query)
         return result
 
-    def logSearch(self,term):
-        item_1 = {
-        "item_name" : term,
-        "max_discount" : "10%",
-        "batch_number" : "RR450020dsFRG",
-        "price" : 1,
-        "category" : term
+    def logSearch(self,term,data):
+        ## storing values in a variable
+        today = datetime.now()
+
+        item = {
+            "term" : term,
+            "data" : today.strftime("%Y-%m-%d %H:%M:%S"),
+            "log" : {
+                "log" : data
+            }
         }
 
-        self.mongo.client.insert_many([item_1])
+        self.mongo.insertData('search',item)

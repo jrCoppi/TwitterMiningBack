@@ -15,14 +15,14 @@ class Runner():
     def search(self,term):
         #Executes the reading
         inputData = self.read.execute(term)
+
+        #Logs
+        self.operation.logSearch(term,inputData)
         
         inputData = self.filtering.execute(inputData)
 
         #Saves the result
         searchId = self.operation.saveSearch(inputData,term)
-
-        #Logs
-        self.operation.logSearch(term)
 
         # Data to serve with our API
         listSearch = {

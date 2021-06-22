@@ -15,6 +15,7 @@
 - flask_restx
 - flask_cors
 - connexion
+- pymongo
 
 # How to Install
  Run the script.sql file from the root folder to create the MYQSL databse, install the packages.
@@ -30,9 +31,8 @@
  - Runner: Main file, called by the API, manages the operations betwen packages.
 
 
-
-- Gravar log de cada requisição
-- Gravar uma segunda tabela com os dados todos que retorna
+- Criar api que retorna conteudo a partir de uma keyword diretamente
 - Commitar isso numa branch como instalra etc
 
 - Outra branch separada só pra testar, criar api para salvar respostas num arquivo e salvar na base, e outra pra pegar esse dado
+#mongod --dbpath "D:\Dev\Mongo\data\db" --logpath="D:\Dev\Mongo\data\logs\log1.log"

@@ -8,7 +8,8 @@ class Mongo():
     def __init__(self):
         CONNECTION_STRING = "mongodb://localhost:27017/?readPreference=primary"
         self.client = MongoClient(CONNECTION_STRING)
-        #collection
-        self.client = self.client['minning']
         #database
         self.client = self.client['twittermining']
+
+    def insertData(self,collection, item):
+        self.client[collection].insert_many([item])
