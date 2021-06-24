@@ -31,6 +31,11 @@ def mostSearched():
 @app.route('/latestSearchs', methods=['GET'])
 def latestSearchs():
     return runner.getLatestSearchs()
+
+@app.route('/getLog', methods=['GET'])
+def Log():
+    term = request.args.get('term')
+    return runner.getLog(term)
         
 if __name__ == "__main__":
   app.run(debug=True)

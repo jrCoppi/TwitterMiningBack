@@ -15,6 +15,7 @@
 - flask_restx
 - flask_cors
 - connexion
+- pymongo
 
 # How to Install
  Run the script.sql file from the root folder to create the MYQSL databse, install the packages.

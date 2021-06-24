@@ -1,12 +1,15 @@
 from Data.Base import Base
+from Data.Mongo import Mongo
 from datetime import datetime
 
 class Operation():
     base = ''
+    mongo = ''
 
     #Validate, change user data for pc and also twitter for get the "last ones"
     def __init__(self):
         self.base = Base()
+        self.mongo = Mongo()
 
     def saveSearch(self,data,term):
         termId = self.createTerm(term)
@@ -74,3 +77,24 @@ class Operation():
         query = "SELECT p.id_pesquisa, t.ds_termo FROM pesquisa p inner join termo t ON (t.id_termo = p.id_termo) order by p.dt_pesquisa desc limit 10"
         result = self.base.selectData(query)
         return result
+
+    def logSearch(self,term,data):
+        ## storing values in a variable
+        today = datetime.now()
+
+        item = {
+            "term" : term,
+            "data" : today.strftime("%Y-%m-%d %H:%M:%S"),
+            "log" : {
+                "log" : data
+            }
+        }
+
+        self.mongo.insertData('search',item)
+
+    def getLog(self,term):
+        item = {
+            "term" : term
+        }
+
+        return self.mongo.findMany('search',item)
