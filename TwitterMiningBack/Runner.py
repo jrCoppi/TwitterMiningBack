@@ -60,3 +60,13 @@ class Runner():
         }
         
         return listSearch
+
+    def getLog(self,term):
+        baseLogs = self.operation.getLog(term)
+
+        listSearch = {}
+
+        for baseLog in baseLogs:
+            listSearch.update(baseLog.get('log'))
+
+        return listSearch

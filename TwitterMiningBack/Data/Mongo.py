@@ -13,3 +13,6 @@ class Mongo():
 
     def insertData(self,collection, item):
         self.client[collection].insert_many([item])
+
+    def findMany(self,collection, query):
+        return self.client[collection].find( query )

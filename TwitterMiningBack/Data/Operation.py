@@ -91,3 +91,10 @@ class Operation():
         }
 
         self.mongo.insertData('search',item)
+
+    def getLog(self,term):
+        item = {
+            "term" : term
+        }
+
+        return self.mongo.findMany('search',item)
