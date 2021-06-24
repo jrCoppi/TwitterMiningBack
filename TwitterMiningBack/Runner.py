@@ -15,8 +15,10 @@ class Runner():
     def search(self,term):
         #Executes the reading
         inputData = self.read.execute(term)
+
+        #Logs
+        self.operation.logSearch(term,inputData)
         
-        print(inputData)
         inputData = self.filtering.execute(inputData)
 
         #Saves the result
@@ -57,4 +59,14 @@ class Runner():
             "termList": results
         }
         
+        return listSearch
+
+    def getLog(self,term):
+        baseLogs = self.operation.getLog(term)
+
+        listSearch = {}
+
+        for baseLog in baseLogs:
+            listSearch.update(baseLog.get('log'))
+
         return listSearch
