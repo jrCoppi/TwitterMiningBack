@@ -70,3 +70,24 @@ class Runner():
             listSearch.update(baseLog.get('log'))
 
         return listSearch
+
+    def saveFile(self,file):
+        fileClient = self.operation.getFile()
+        fileID = fileClient.put( open( file, 'rb')  )
+        out = fileClient.get(fileID)
+
+        print(fileID)
+
+        return fileID
+    
+    def restoreFile(self,file):
+        fileClient = self.operation.getFile()
+        cursor = fileClient.find().sort("uploadDate", -1).limit(2)
+
+        i=0 
+        while(i < cursor.count()):
+            fi=cursor.next()
+            with open("D:\\Dev\\Python\\TwitterMiningBack\\documents.rar","wb") as f:
+                f.write(fi.read())
+                f.closed
+                i=i+1

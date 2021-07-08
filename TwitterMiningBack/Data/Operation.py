@@ -98,3 +98,6 @@ class Operation():
         }
 
         return self.mongo.findMany('search',item)
+
+    def getFile(self):
+        return self.mongo.fileClient

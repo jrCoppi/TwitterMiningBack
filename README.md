@@ -29,3 +29,7 @@
  - Reader: Does the request and returns only the valid content 
  - Filter: Loop through the data, filtering to get only text and structure it.
  - Runner: Main file, called by the API, manages the operations betwen packages.
+
+- API POST - passa o nome do arquivo, (coloca ele la manual) e salva na base (apaga ele)
+- API GET - busca o arquivo da base e restaura ele na pasta 
+#mongod --dbpath "D:\Dev\Mongo\data\db" --logpath="D:\Dev\Mongo\data\logs\log1.log"

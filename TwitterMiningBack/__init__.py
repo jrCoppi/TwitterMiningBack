@@ -36,6 +36,19 @@ def latestSearchs():
 def Log():
     term = request.args.get('term')
     return runner.getLog(term)
+
+@app.route('/saveFile', methods=['POST'])
+def post():
+    file = request.form['name']
+    runner.saveFile(file)
+    return {'sucesso': True}
+
+@app.route('/restoreFile', methods=['GET'])
+def get():
+    file = request.args.get('name')
+    runner.restoreFile(file)
+    return {'sucesso': True}
+
         
 if __name__ == "__main__":
   app.run(debug=True)
